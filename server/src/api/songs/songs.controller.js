@@ -14,7 +14,7 @@ const getSong = async(req, res, next) => {
 
     try{
         const {id} = req.params;
-        const song = await Song.findById(id).populate("anime");
+        const song = await Song.findById(id)
         res.status(200).json(song);
     }catch(error){
         return next(error)
@@ -24,7 +24,7 @@ const getSong = async(req, res, next) => {
 const postSong = async(req, res, next) => {
     try{
         const song = new Song();
-        song.title = req.body.title
+        song.songtitle = req.body.songtitle
         song.year = req.body.year
         song.anime = req.body.anime
         

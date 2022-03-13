@@ -45,7 +45,7 @@ app.use(express.urlencoded({
 }));
 
 app.use("/animesong/songs", songRoutes);
-app.use("/animesong/anime", animeRoutes);
+app.use("/animesong/animes", animeRoutes);
 app.use("/animesong/users", userRoutes);
 
 // app.use('/animesong', (req, res, next) => {
