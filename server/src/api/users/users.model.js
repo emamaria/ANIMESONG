@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 
 const bcrypt = require("bcrypt");
 
-const { validationPassword, validationEmail } = require('../../utils/validators/validators');
+const { validationPassword, validationEmail } = require('../../utils/validators/validators.js');
+
+const { setError } = require('../../utils/error/error')
 
 const userSchema = new mongoose.Schema(
     {
@@ -13,13 +15,13 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-userSchema.pre("save", function(next) {
+userSchema.pre("save", function(next){
     if(!validationPassword(this.password)){
-        return next(new Error())
+        return next(setError(400, 'This password has invalid syntax'))
     }
 
     if(!validationEmail(this.email)){
-        return next(new Error())
+        return next(setError(400, 'This email syntax is not correct'))
     }
    
 

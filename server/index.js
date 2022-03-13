@@ -1,4 +1,4 @@
-//no puesto body parser ni rutas publicas
+
 const express = require("express");
 
 const cors = require("cors");
@@ -44,9 +44,10 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+app.use("/animesong/users", userRoutes);
 app.use("/animesong/songs", songRoutes);
 app.use("/animesong/animes", animeRoutes);
-app.use("/animesong/users", userRoutes);
+
 
 // app.use('/animesong', (req, res, next) => {
 //     return res.json(documentation);

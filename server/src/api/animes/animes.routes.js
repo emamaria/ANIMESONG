@@ -10,7 +10,7 @@ animeRoutes.get("/:id", getAnime)
 
 animeRoutes.post("/", postAnime)
 
-animeRoutes.patch("/:id", updateAnime)
+animeRoutes.patch("/:id",[isAuth], updateAnime)
 
 animeRoutes.delete("/:id", [isAuth], deleteAnime)
 

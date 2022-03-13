@@ -10,7 +10,7 @@ songRoutes.get("/:id", getSong)
 
 songRoutes.post("/", postSong)
 
-songRoutes.patch("/:id", updateSong)
+songRoutes.patch("/:id",[isAuth], updateSong)
 
 songRoutes.delete("/:id",[isAuth], deleteSong)
 
