@@ -1,5 +1,6 @@
 const User = require('../api/users/users.model');
 const JwtUtils = require('../utils/jwt/jwt');
+const { setError } = require('../utils/error/error');
 
 const isAuth = async (req, res, next) => {
     try {
@@ -7,7 +8,7 @@ const isAuth = async (req, res, next) => {
         const token = req.headers.authorization;
         if (!token) {
         
-            return next(new Error);
+            return next(setError(400, 'This token doesnt exist'));
         }
         
         const parsedToken = token.replace('Bearer ', '');

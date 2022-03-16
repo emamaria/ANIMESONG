@@ -2,7 +2,7 @@ const Song = require("./songs.model");
 
 const getSongs = async(req, res, next) => {
     try{
-       const songs = await Song.find()
+       const songs = await Song.find().populate("anime")
        res.status(200).json(songs);
     }catch(error){
         return next(error)
@@ -14,7 +14,7 @@ const getSong = async(req, res, next) => {
 
     try{
         const {id} = req.params;
-        const song = await Song.findById(id)
+        const song = await Song.findById(id).populate("anime")
         res.status(200).json(song);
     }catch(error){
         return next(error)

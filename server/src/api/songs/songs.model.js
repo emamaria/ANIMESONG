@@ -4,7 +4,7 @@ const songSchema = new mongoose.Schema(
 {
   songtitle: {type: String, required: true, trim:true },
   year: {type: Number, required: false, trim: true},
-  anime: {type: String, required: true, trim:true }
+  anime: [{ type: mongoose.Schema.Types.ObjectId, ref: "anime", required: true }]
 
 })
 
