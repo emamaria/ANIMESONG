@@ -8,7 +8,13 @@ const { connect } = require("./src/utils/database/db");
 
 const { configCloudinary } = require('./src/utils/cloudinary/config')
 
-// const documentation = require("./src/utils/documentation/api.json");
+const PORT = process.env.PORT || 8080;
+
+const app = express();
+
+connect();
+
+const documentation = require("./src/utils/documentation/api.json");
 
 
 
@@ -18,12 +24,6 @@ const songRoutes = require("./src/api/songs/songs.routes")
 
 const userRoutes = require("./src/api/users/users.routes")
 
-
-const PORT = process.env.PORT || 8080;
-
-const app = express();
-
-connect();
 
 configCloudinary();
 
@@ -53,9 +53,10 @@ app.use("/animesong/songs", songRoutes);
 app.use("/animesong/animes", animeRoutes);
 
 
-// app.use('/animesong', (req, res, next) => {
-//     return res.json(documentation);
-// });
+app.use('/animesong', (req, res, next) => {
+    return res.json(documentation);
+});
+
 app.use('*', (req, res, next) => {
     const error = new Error();
     error.status = 404;

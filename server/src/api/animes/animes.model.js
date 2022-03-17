@@ -7,7 +7,7 @@ const animeSchema = new mongoose.Schema(
       year: {type: Number, required: false, trim: true},
       author: {type: String, required: true, trim:true },
       genre: {type: String, required: true, trim:true },
-      img:{type: String, required: true, trim:true }
+      img:{type: String, required: false, trim:true }
       
     
     })

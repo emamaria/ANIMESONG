@@ -46,7 +46,7 @@ const updateAnime = async(req, res, next) => {
         anime.year = req.body.year
         anime.author = req.body.author
         anime.genre = req.body.genre
-        anime.img = req.file.path
+        if (req.file)anime.img = req.file.path
         anime._id = id;
         const animeUpdate = await Anime.findByIdAndUpdate(id, anime)
         return res.status(200).json(animeUpdate)

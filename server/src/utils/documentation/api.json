@@ -1,0 +1,121 @@
+{
+    "songs": "/animesong/songs",
+    "schema": {
+        "songtitle": "string",
+        "year": "number",
+        "anime": "Anime ID"
+    },
+    "endpoints": [
+        {
+            "Action": "GET",
+            "URL": "/animesong/songs",
+            "response": [
+                {
+                    "_id": "62335046082a7b6b910532b8",
+                    "anime": [
+                        {
+                            "_id": "62334de6082a7b6b910532aa",
+                            "title": "City Hunter",
+                            "year": 1987,
+                            "author": "Tsukasa Hojo",
+                            "genre": "Detective comedy",
+                            "img": "https://res.cloudinary.com/dnkyf1ht8/image/upload/v1647529444/Animes/oczyz9grubndmsvmrzzv.jpg",
+                            "__v": 0
+                        }
+                    ],
+                    "songtitle": "Get Wild",
+                    "year": 1987,
+                    "__v": 0
+                },
+                {
+                    "_id": "62335081082a7b6b910532ba",
+                    "anime": [
+                        {
+                            "_id": "62334e22082a7b6b910532ac",
+                            "title": "Yu Yu Hakusho",
+                            "year": 1992,
+                            "author": "Yoshihiro Togashi",
+                            "genre": "Adventure, martial arts",
+                            "img": "https://res.cloudinary.com/dnkyf1ht8/image/upload/v1647529505/Animes/hrfrjmwxsgqedayvzcsy.jpg",
+                            "__v": 0
+                        }
+                    ],
+                    "songtitle": "Hohoemi No Bakudan",
+                    "year": 1992,
+                    "__v": 0
+                }
+            ]
+        },
+        {
+            "Action": "GET",
+            "URL": "/animesong/songs/id",
+            "response": {
+                "_id": "62334fcc082a7b6b910532b3",
+                "anime": [
+                    {
+                        "_id": "62334d9c082a7b6b910532a8",
+                        "title": "Dragon Ball Gt",
+                        "year": 1996,
+                        "author": "Toei Animation studio",
+                        "genre": "Adventure, martial arts",
+                        "img": "https://res.cloudinary.com/dnkyf1ht8/image/upload/v1647529370/Animes/xse1rw9w8snhd5ncpiyw.jpg",
+                        "__v": 0
+                    }
+                ],
+                "songtitle": "Dan Dan Kokoro Hikareteku",
+                "year": 1996,
+                "__v": 0
+            }
+        },
+        {
+            "Action": "POST",
+            "URL": "/animesong/songs",
+            "request-body": {
+                "songtitle": "Gurenge",
+                "year": 2020,
+                "anime": "6233545b082a7b6b910532de"
+		        },
+		        "response": {
+                    "anime": [
+                        "6233545b082a7b6b910532de"
+                    ],
+                    "_id": "623354f9082a7b6b910532e1",
+                    "songtitle": "Gurenge",
+                    "year": 2020,
+                    "__v": 0
+                }
+        },
+        {
+            "Action": "PATCH",
+            "URL": "/animesong/songs/id",
+            "request-body": {
+              "anime": "62334d9c082a7b6b910532a8"
+		        },
+
+            "token": {},
+		        "response": {
+                    "anime": [
+                        "6233545b082a7b6b910532de"
+                    ],
+                    "_id": "623354f9082a7b6b910532e1",
+                    "songtitle": "Gurenge",
+                    "year": 2020,
+                    "__v": 0
+                }
+        },
+        {
+            "Action": "DELETE",
+            "URL": "/animesong/songs/id",
+             "token": {},
+		        "response": {
+                    "_id": "62334fcc082a7b6b910532b3",
+                    "anime": [
+                        "62334d9c082a7b6b910532a8"
+                    ],
+                    "songtitle": "Dan Dan Kokoro Hikareteku",
+                    "year": 1996,
+                    "__v": 0
+                }
+        }
+    ]
+}
