@@ -39,7 +39,10 @@ const postSong = async(req, res, next) => {
 const updateSong = async(req, res, next) => {
     try{
         const {id} = req.params
-        const song = new Song(req.body)
+        const song = new Song()
+        song.songtitle = req.body.songtitle
+        song.year = req.body.year
+        song.anime = req.body.anime
         song._id = id;
         const songUpdate = await Song.findByIdAndUpdate(id, song)
         return res.status(200).json(songUpdate)

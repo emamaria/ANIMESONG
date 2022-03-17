@@ -29,7 +29,7 @@ const postAnime = async(req, res, next) => {
         anime.year = req.body.year
         anime.author = req.body.author
         anime.genre = req.body.genre
-        anime.img = req.file.path
+        if (req.file)anime.img = req.file.path
 
         const animeDb = await anime.save()
         return res.status(201).json(animeDb)
