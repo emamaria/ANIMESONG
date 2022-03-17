@@ -6,6 +6,8 @@ const cors = require("cors");
 
 const { connect } = require("./src/utils/database/db");
 
+const { configCloudinary } = require('./src/utils/cloudinary/config')
+
 // const documentation = require("./src/utils/documentation/api.json");
 
 
@@ -22,6 +24,8 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 connect();
+
+configCloudinary();
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, PATCH')
