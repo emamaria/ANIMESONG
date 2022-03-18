@@ -8,7 +8,7 @@ songRoutes.get("/", getSongs)
 
 songRoutes.get("/:id", getSong)
 
-songRoutes.post("/", postSong)
+songRoutes.post("/",[isAuth], postSong)
 
 songRoutes.patch("/:id",[isAuth], updateSong)
 

@@ -13,7 +13,7 @@ animeRoutes.get("/", getAnimes)
 
 animeRoutes.get("/:id", getAnime)
 
-animeRoutes.post("/", upload.single('img'), postAnime)
+animeRoutes.post("/", [isAuth], upload.single('img'), postAnime)
 
 animeRoutes.patch("/:id",[isAuth], upload.single('img'), updateAnime)
 
