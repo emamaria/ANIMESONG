@@ -17,7 +17,7 @@ animeRoutes.post("/", [isAuth], upload.single('img'), postAnime)
 
 animeRoutes.patch("/:id",[isAuth], upload.single('img'), updateAnime)
 
-animeRoutes.delete("/:id", [isAuth], upload.single('img'), deleteAnime)
+animeRoutes.delete("/:id", [isAuth], deleteAnime)
 
 
 module.exports = animeRoutes;
