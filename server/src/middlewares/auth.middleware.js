@@ -17,7 +17,7 @@ const isAuth = async (req, res, next) => {
         req.user = userLogued;
         next();
     } catch (error) {
-        return next(error)
+        return next(setError(400, 'Cannot authenticate'))
     }
 }
 

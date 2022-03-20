@@ -19,7 +19,7 @@ const register = async (req, res, next) => {
 
     } catch (error) {
         console.log(error);
-        return next(error)
+        return next(setError(400, 'Cannot register'))
     }
 }
 
@@ -39,7 +39,7 @@ const login = async (req, res, next) => {
             return res.status(200).json(token);
         }
     } catch (error) {
-        return next(error)
+        return next(setError(400, 'Cannot login'))
     }
 }
 
@@ -49,7 +49,7 @@ const logout = (req, res, next) => {
         const token = null;
         return res.status(201).json(token)
     } catch (error) {
-        return next(error)
+        return next(setError(400, 'Cannot logout'))
     }
 }
 
