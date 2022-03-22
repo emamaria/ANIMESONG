@@ -62,7 +62,7 @@ const deleteAnime = async(req, res, next) => {
     try{
         const {id} = req.params
         const anime = await Anime.findByIdAndDelete(id)
-        deleteImgCloudinary(anime.img)
+        if(anime.img)deleteImgCloudinary(anime.img)
         return res.status(200).json(anime)
     }catch(error){
         return next(setError(400, 'Cannot delete Anime'))
